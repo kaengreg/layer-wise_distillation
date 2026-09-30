@@ -1,0 +1,10 @@
+{
+  "inference_tokens_per_second": 8589.94826457181,
+  "parameter_count": 3085938688,
+  "peak_gpu_memory_bytes": 14472897536,
+  "perplexity": 6.432703384985579,
+  "perplexity_overflow": false,
+  "teacher_kl": -3.778607008715376e-08,
+  "trainable_parameter_count": 0,
+  "validation_loss": 1.861394883016016
+}

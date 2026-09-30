@@ -1,0 +1,47 @@
+{
+  "backend": "vllm",
+  "batch_size": 8,
+  "commands": {
+    "distilled": "python /workdir/llmtf_open/evaluate_model.py --model_name_or_path /workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/final --conv_path /workdir/llmtf_open/conversation_configs/default_foundational.json --output_dir /workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/llmtf/full/distilled --dataset_names nlpcoreteam/enmmlu nlpcoreteam/rummlu daru/treewayabstractive darumeru/cp_doc_ru darumeru/cp_para_ru darumeru/flores_en_ru darumeru/flores_ru_en --few_shot_count 5 --max_sample_per_dataset 1000 --batch_size 8 --model_context_len 8192 --temperature 0.0 --repetition_penalty 1.0 --vllm --tensor_parallel_size 1 --is_foundational --force_recalc",
+    "pruning_only": "python /workdir/llmtf_open/evaluate_model.py --model_name_or_path /workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/iterations/iteration_002/pruning_only --conv_path /workdir/llmtf_open/conversation_configs/default_foundational.json --output_dir /workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/llmtf/full/pruning_only --dataset_names nlpcoreteam/enmmlu nlpcoreteam/rummlu daru/treewayabstractive darumeru/cp_doc_ru darumeru/cp_para_ru darumeru/flores_en_ru darumeru/flores_ru_en --few_shot_count 5 --max_sample_per_dataset 1000 --batch_size 8 --model_context_len 8192 --temperature 0.0 --repetition_penalty 1.0 --vllm --tensor_parallel_size 1 --is_foundational --force_recalc",
+    "teacher": "python /workdir/llmtf_open/evaluate_model.py --model_name_or_path Qwen/Qwen2.5-3B --conv_path /workdir/llmtf_open/conversation_configs/default_foundational.json --output_dir /workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/llmtf/full/teacher --dataset_names nlpcoreteam/enmmlu nlpcoreteam/rummlu daru/treewayabstractive darumeru/cp_doc_ru darumeru/cp_para_ru darumeru/flores_en_ru darumeru/flores_ru_en --few_shot_count 5 --max_sample_per_dataset 1000 --batch_size 8 --model_context_len 8192 --temperature 0.0 --repetition_penalty 1.0 --vllm --tensor_parallel_size 1 --is_foundational --force_recalc"
+  },
+  "conversation_config": "conversation_configs/default_foundational.json",
+  "datasets": {
+    "daru/treewayabstractive": "dichspace/daru_treeway_eval",
+    "darumeru/cp_doc_ru": "RefalMachine/darumeru:cp_doc_ru",
+    "darumeru/cp_para_ru": "RefalMachine/darumeru:cp_para_ru",
+    "darumeru/flores_en_ru": "RefalMachine/darumeru:flores",
+    "darumeru/flores_ru_en": "RefalMachine/darumeru:flores",
+    "nlpcoreteam/enmmlu": "RefalMachine/darumeru:mmlu_nlpcoreteam (English fields)",
+    "nlpcoreteam/rummlu": "RefalMachine/darumeru:mmlu_nlpcoreteam (Russian fields)"
+  },
+  "few_shot_count": 5,
+  "generation": {
+    "num_return_sequences": 1,
+    "repetition_penalty": 1.0,
+    "temperature": 0.0
+  },
+  "is_foundational": true,
+  "llmtf_commit": "d36543888b6cc3865cf3a584b5c1bda0b0455567",
+  "llmtf_internal_seed": 555,
+  "llmtf_repository": "https://github.com/RefalMachine/llmtf_open.git",
+  "max_sample_per_dataset": 1000,
+  "mode": "full",
+  "model_context_length": 8192,
+  "models": {
+    "distilled": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/final",
+    "pruning_only": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/iterations/iteration_002/pruning_only",
+    "teacher": "Qwen/Qwen2.5-3B"
+  },
+  "resolved_task_identifiers": [
+    "nlpcoreteam/enmmlu",
+    "nlpcoreteam/rummlu",
+    "daru/treewayabstractive",
+    "darumeru/cp_doc_ru",
+    "darumeru/cp_para_ru",
+    "darumeru/flores_en_ru",
+    "darumeru/flores_ru_en"
+  ],
+  "tensor_parallel_size": 1
+}

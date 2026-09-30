@@ -1,0 +1,3965 @@
+{
+  "llmtf_commit": "d36543888b6cc3865cf3a584b5c1bda0b0455567",
+  "protocol": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/llmtf/full/protocol.json",
+  "roles": {
+    "distilled": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/llmtf/full/distilled",
+    "pruning_only": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/llmtf/full/pruning_only",
+    "teacher": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/llmtf/full/teacher"
+  },
+  "rows": [
+    {
+      "distilled": {
+        "leaderboard_result": 0.2368949096218724,
+        "results": {
+          "rougel": 0.2368949096218724
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 512,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 512,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/final",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "path": "dichspace/daru_treeway_eval"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.daru_treeway_summ.DaruTreewayAbstractive",
+              "module_sha256": "d33a8d326aea8f9e3f651b147f162cfc3be311d423dfd21979b6479622049b6c"
+            },
+            "init_params": {
+              "name_suffix": null
+            },
+            "max_prompt_len": 7680,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 512,
+            "method": "generate",
+            "method_additional_args": {},
+            "name": "daru/treewayabstractive",
+            "registry_name": "daru/treewayabstractive"
+          }
+        },
+        "run_fingerprint": "a911bf49e0c43e89ddc20f753fcd5ca6eef41a028fb419192b06b11ef8a20a17",
+        "task_name": "daru/treewayabstractive",
+        "time": 146.865971326828
+      },
+      "pruning_only": {
+        "leaderboard_result": 0.23645635337793178,
+        "results": {
+          "rougel": 0.23645635337793178
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 512,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 512,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/iterations/iteration_002/pruning_only",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "path": "dichspace/daru_treeway_eval"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.daru_treeway_summ.DaruTreewayAbstractive",
+              "module_sha256": "d33a8d326aea8f9e3f651b147f162cfc3be311d423dfd21979b6479622049b6c"
+            },
+            "init_params": {
+              "name_suffix": null
+            },
+            "max_prompt_len": 7680,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 512,
+            "method": "generate",
+            "method_additional_args": {},
+            "name": "daru/treewayabstractive",
+            "registry_name": "daru/treewayabstractive"
+          }
+        },
+        "run_fingerprint": "00ccec25562525c227afdfd67f0a3cbc79fb50884a0b345aff75995a4dfa60a7",
+        "task_name": "daru/treewayabstractive",
+        "time": 139.714213848114
+      },
+      "task": "daru/treewayabstractive",
+      "teacher": {
+        "leaderboard_result": 0.24676803534768385,
+        "results": {
+          "rougel": 0.24676803534768385
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 512,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 512,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "Qwen/Qwen2.5-3B",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "path": "dichspace/daru_treeway_eval"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.daru_treeway_summ.DaruTreewayAbstractive",
+              "module_sha256": "d33a8d326aea8f9e3f651b147f162cfc3be311d423dfd21979b6479622049b6c"
+            },
+            "init_params": {
+              "name_suffix": null
+            },
+            "max_prompt_len": 7680,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 512,
+            "method": "generate",
+            "method_additional_args": {},
+            "name": "daru/treewayabstractive",
+            "registry_name": "daru/treewayabstractive"
+          }
+        },
+        "run_fingerprint": "5a8c3867c1ac3579c008f3cc54c7ea118746081f0c79775b91073f2d4dde25ae",
+        "task_name": "daru/treewayabstractive",
+        "time": 133.56939339637756
+      }
+    },
+    {
+      "distilled": {
+        "leaderboard_result": 0.44,
+        "results": {
+          "lcs": 0.44,
+          "len": 0.8133863392126931,
+          "symbol_per_token": 2.628799741101169,
+          "tokens_per_word": 2.8733494121134533
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 4096,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 4096,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/final",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "cp_doc_ru",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.darumeru.CopyText",
+              "module_sha256": "0565e3ce1d722bdc518f9e5f70c00748514604fb23cba4404396d234e8b1fbdb"
+            },
+            "init_params": {
+              "lang": "ru",
+              "name_suffix": null,
+              "subtask": "doc"
+            },
+            "max_prompt_len": 4096,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 4096,
+            "method": "generate",
+            "method_additional_args": {
+              "return_tokens": true
+            },
+            "name": "darumeru/cp_doc_ru",
+            "registry_name": "darumeru/cp_doc_ru"
+          }
+        },
+        "run_fingerprint": "f61f87abfc647b8d18225ad39a9a4575ef2bbcae003016fb3f22fb21af8b1b36",
+        "task_name": "darumeru/cp_doc_ru",
+        "time": 68.16100668907166
+      },
+      "pruning_only": {
+        "leaderboard_result": 0.41,
+        "results": {
+          "lcs": 0.41,
+          "len": 0.8005854208449875,
+          "symbol_per_token": 2.6267407950337223,
+          "tokens_per_word": 2.8677701402590468
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 4096,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 4096,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/iterations/iteration_002/pruning_only",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "cp_doc_ru",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.darumeru.CopyText",
+              "module_sha256": "0565e3ce1d722bdc518f9e5f70c00748514604fb23cba4404396d234e8b1fbdb"
+            },
+            "init_params": {
+              "lang": "ru",
+              "name_suffix": null,
+              "subtask": "doc"
+            },
+            "max_prompt_len": 4096,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 4096,
+            "method": "generate",
+            "method_additional_args": {
+              "return_tokens": true
+            },
+            "name": "darumeru/cp_doc_ru",
+            "registry_name": "darumeru/cp_doc_ru"
+          }
+        },
+        "run_fingerprint": "0f100af126e0033da7f3245aee8430d731f841be40c1d65e4fb778bde1fc3d8b",
+        "task_name": "darumeru/cp_doc_ru",
+        "time": 67.70544528961182
+      },
+      "task": "darumeru/cp_doc_ru",
+      "teacher": {
+        "leaderboard_result": 0.94,
+        "results": {
+          "lcs": 0.94,
+          "len": 0.9967830088982848,
+          "symbol_per_token": 2.6311959477044895,
+          "tokens_per_word": 2.8737124138668553
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 4096,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 4096,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "Qwen/Qwen2.5-3B",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "cp_doc_ru",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.darumeru.CopyText",
+              "module_sha256": "0565e3ce1d722bdc518f9e5f70c00748514604fb23cba4404396d234e8b1fbdb"
+            },
+            "init_params": {
+              "lang": "ru",
+              "name_suffix": null,
+              "subtask": "doc"
+            },
+            "max_prompt_len": 4096,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 4096,
+            "method": "generate",
+            "method_additional_args": {
+              "return_tokens": true
+            },
+            "name": "darumeru/cp_doc_ru",
+            "registry_name": "darumeru/cp_doc_ru"
+          }
+        },
+        "run_fingerprint": "428145319234a73bf24e700047e89c3837994b5e353b99fe99ec2439d95e5ef2",
+        "task_name": "darumeru/cp_doc_ru",
+        "time": 57.356173276901245
+      }
+    },
+    {
+      "distilled": {
+        "leaderboard_result": 0.88,
+        "results": {
+          "lcs": 0.88,
+          "len": 0.9794010823973995,
+          "symbol_per_token": 2.565711671771473,
+          "tokens_per_word": 2.892753494983617
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 1024,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 1024,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/final",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "cp_para_ru",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.darumeru.CopyText",
+              "module_sha256": "0565e3ce1d722bdc518f9e5f70c00748514604fb23cba4404396d234e8b1fbdb"
+            },
+            "init_params": {
+              "lang": "ru",
+              "name_suffix": null,
+              "subtask": "para"
+            },
+            "max_prompt_len": 7168,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 1024,
+            "method": "generate",
+            "method_additional_args": {
+              "return_tokens": true
+            },
+            "name": "darumeru/cp_para_ru",
+            "registry_name": "darumeru/cp_para_ru"
+          }
+        },
+        "run_fingerprint": "8a46babfc13e2429819a1e8382d523cdaf0dd261cb96fda5060a2b6fd4c06482",
+        "task_name": "darumeru/cp_para_ru",
+        "time": 19.14763569831848
+      },
+      "pruning_only": {
+        "leaderboard_result": 0.86,
+        "results": {
+          "lcs": 0.86,
+          "len": 0.9772258800689514,
+          "symbol_per_token": 2.5653795746059114,
+          "tokens_per_word": 2.893339058445756
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 1024,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 1024,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/iterations/iteration_002/pruning_only",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "cp_para_ru",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.darumeru.CopyText",
+              "module_sha256": "0565e3ce1d722bdc518f9e5f70c00748514604fb23cba4404396d234e8b1fbdb"
+            },
+            "init_params": {
+              "lang": "ru",
+              "name_suffix": null,
+              "subtask": "para"
+            },
+            "max_prompt_len": 7168,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 1024,
+            "method": "generate",
+            "method_additional_args": {
+              "return_tokens": true
+            },
+            "name": "darumeru/cp_para_ru",
+            "registry_name": "darumeru/cp_para_ru"
+          }
+        },
+        "run_fingerprint": "ac535fd0f7cfffd4707503976036192b92d4cdd47c323f2196a84042a99fc884",
+        "task_name": "darumeru/cp_para_ru",
+        "time": 19.2463698387146
+      },
+      "task": "darumeru/cp_para_ru",
+      "teacher": {
+        "leaderboard_result": 0.99,
+        "results": {
+          "lcs": 0.99,
+          "len": 0.9993850962224196,
+          "symbol_per_token": 2.563125966033261,
+          "tokens_per_word": 2.890306043395823
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 1024,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 1024,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "Qwen/Qwen2.5-3B",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "cp_para_ru",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.darumeru.CopyText",
+              "module_sha256": "0565e3ce1d722bdc518f9e5f70c00748514604fb23cba4404396d234e8b1fbdb"
+            },
+            "init_params": {
+              "lang": "ru",
+              "name_suffix": null,
+              "subtask": "para"
+            },
+            "max_prompt_len": 7168,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 1024,
+            "method": "generate",
+            "method_additional_args": {
+              "return_tokens": true
+            },
+            "name": "darumeru/cp_para_ru",
+            "registry_name": "darumeru/cp_para_ru"
+          }
+        },
+        "run_fingerprint": "850f9f368cc17e0c256195c4ecb45857e59489242a1808ab49201feadbac128f",
+        "task_name": "darumeru/cp_para_ru",
+        "time": 17.640121936798096
+      }
+    },
+    {
+      "distilled": {
+        "leaderboard_result": 0.5086392593994101,
+        "results": {
+          "rougel": 0.5086392593994101
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 512,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 512,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/final",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "flores",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.translation.DaruFlores",
+              "module_sha256": "d8242148e45652c0b4529c3e2b6a50c13a56e13f5a2ef8c9df61e924dadd5207"
+            },
+            "init_params": {
+              "input_lang": "en",
+              "name_suffix": null
+            },
+            "max_prompt_len": 7680,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 512,
+            "method": "generate",
+            "method_additional_args": {},
+            "name": "darumeru/flores_en_ru",
+            "registry_name": "darumeru/flores_en_ru"
+          }
+        },
+        "run_fingerprint": "b67881355c7f1b5c6ceb871525519a8e1322454c197a591098199e1a699c7981",
+        "task_name": "darumeru/flores_en_ru",
+        "time": 42.95222520828247
+      },
+      "pruning_only": {
+        "leaderboard_result": 0.506643840235942,
+        "results": {
+          "rougel": 0.506643840235942
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 512,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 512,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/iterations/iteration_002/pruning_only",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "flores",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.translation.DaruFlores",
+              "module_sha256": "d8242148e45652c0b4529c3e2b6a50c13a56e13f5a2ef8c9df61e924dadd5207"
+            },
+            "init_params": {
+              "input_lang": "en",
+              "name_suffix": null
+            },
+            "max_prompt_len": 7680,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 512,
+            "method": "generate",
+            "method_additional_args": {},
+            "name": "darumeru/flores_en_ru",
+            "registry_name": "darumeru/flores_en_ru"
+          }
+        },
+        "run_fingerprint": "e025d40bc84dc12759f26f633624d46d57d8a59d282f6e6701bc2a636d3c3204",
+        "task_name": "darumeru/flores_en_ru",
+        "time": 38.02315044403076
+      },
+      "task": "darumeru/flores_en_ru",
+      "teacher": {
+        "leaderboard_result": 0.5311646981831613,
+        "results": {
+          "rougel": 0.5311646981831613
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 512,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 512,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "Qwen/Qwen2.5-3B",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "flores",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.translation.DaruFlores",
+              "module_sha256": "d8242148e45652c0b4529c3e2b6a50c13a56e13f5a2ef8c9df61e924dadd5207"
+            },
+            "init_params": {
+              "input_lang": "en",
+              "name_suffix": null
+            },
+            "max_prompt_len": 7680,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 512,
+            "method": "generate",
+            "method_additional_args": {},
+            "name": "darumeru/flores_en_ru",
+            "registry_name": "darumeru/flores_en_ru"
+          }
+        },
+        "run_fingerprint": "979aa859ef8cb8e89b4eb5a750da7ae416dddbd0d823b89b6e44b4ce94a646ea",
+        "task_name": "darumeru/flores_en_ru",
+        "time": 37.11220717430115
+      }
+    },
+    {
+      "distilled": {
+        "leaderboard_result": 0.594129440167911,
+        "results": {
+          "rougel": 0.594129440167911
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 512,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 512,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/final",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "flores",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.translation.DaruFlores",
+              "module_sha256": "d8242148e45652c0b4529c3e2b6a50c13a56e13f5a2ef8c9df61e924dadd5207"
+            },
+            "init_params": {
+              "input_lang": "ru",
+              "name_suffix": null
+            },
+            "max_prompt_len": 7680,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 512,
+            "method": "generate",
+            "method_additional_args": {},
+            "name": "darumeru/flores_ru_en",
+            "registry_name": "darumeru/flores_ru_en"
+          }
+        },
+        "run_fingerprint": "e09e7131982798b19875934d41661311f696c22f1a53d454960f415fb44c9020",
+        "task_name": "darumeru/flores_ru_en",
+        "time": 23.46548819541931
+      },
+      "pruning_only": {
+        "leaderboard_result": 0.593395416934709,
+        "results": {
+          "rougel": 0.593395416934709
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 512,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 512,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/iterations/iteration_002/pruning_only",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "flores",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.translation.DaruFlores",
+              "module_sha256": "d8242148e45652c0b4529c3e2b6a50c13a56e13f5a2ef8c9df61e924dadd5207"
+            },
+            "init_params": {
+              "input_lang": "ru",
+              "name_suffix": null
+            },
+            "max_prompt_len": 7680,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 512,
+            "method": "generate",
+            "method_additional_args": {},
+            "name": "darumeru/flores_ru_en",
+            "registry_name": "darumeru/flores_ru_en"
+          }
+        },
+        "run_fingerprint": "66e6b4decb4c122ade99ee778f67e71ac7816265079f64cf4b84df742610c37a",
+        "task_name": "darumeru/flores_ru_en",
+        "time": 22.727290391921997
+      },
+      "task": "darumeru/flores_ru_en",
+      "teacher": {
+        "leaderboard_result": 0.605322541863874,
+        "results": {
+          "rougel": 0.605322541863874
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "generate"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 512,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 512,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "Qwen/Qwen2.5-3B",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": {
+              "name": "flores",
+              "path": "RefalMachine/darumeru"
+            },
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.translation.DaruFlores",
+              "module_sha256": "d8242148e45652c0b4529c3e2b6a50c13a56e13f5a2ef8c9df61e924dadd5207"
+            },
+            "init_params": {
+              "input_lang": "ru",
+              "name_suffix": null
+            },
+            "max_prompt_len": 7680,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 512,
+            "method": "generate",
+            "method_additional_args": {},
+            "name": "darumeru/flores_ru_en",
+            "registry_name": "darumeru/flores_ru_en"
+          }
+        },
+        "run_fingerprint": "482124221c9902000d7a648a1e9e26eb6daa31ebbfc9af223941dd541eae243c",
+        "task_name": "darumeru/flores_ru_en",
+        "time": 23.315091371536255
+      }
+    },
+    {
+      "distilled": {
+        "leaderboard_result": 0.618842622519093,
+        "results": {
+          "acc": 0.618842622519093
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "calculate_tokens_proba"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 1,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 1,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/final",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": null,
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.nlpcoreteam.enMMLU",
+              "module_sha256": "743a115d06efc1977cfb557ec88945fe749345e5a9850ea8ea62ae73a99a0df0"
+            },
+            "init_params": {
+              "name_suffix": null
+            },
+            "max_prompt_len": 8191,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 1,
+            "method": "calculate_tokens_proba",
+            "method_additional_args": {},
+            "name": "nlpcoreteam/enMMLU",
+            "registry_name": "nlpcoreteam/enmmlu"
+          }
+        },
+        "run_fingerprint": "af4a88eff4b81a01769cdf41dabec4d050943490d0908ad40940d74014241eae",
+        "task_name": "nlpcoreteam/enMMLU",
+        "time": 8.21271014213562
+      },
+      "pruning_only": {
+        "leaderboard_result": 0.6209205192048329,
+        "results": {
+          "acc": 0.6209205192048329
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "calculate_tokens_proba"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 1,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 1,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/iterations/iteration_002/pruning_only",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": null,
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.nlpcoreteam.enMMLU",
+              "module_sha256": "743a115d06efc1977cfb557ec88945fe749345e5a9850ea8ea62ae73a99a0df0"
+            },
+            "init_params": {
+              "name_suffix": null
+            },
+            "max_prompt_len": 8191,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 1,
+            "method": "calculate_tokens_proba",
+            "method_additional_args": {},
+            "name": "nlpcoreteam/enMMLU",
+            "registry_name": "nlpcoreteam/enmmlu"
+          }
+        },
+        "run_fingerprint": "854a7cc965c974acba8f702a08758292c1f1447a54599105e756231ef1af1ace",
+        "task_name": "nlpcoreteam/enMMLU",
+        "time": 8.845951318740845
+      },
+      "task": "nlpcoreteam/enMMLU",
+      "teacher": {
+        "leaderboard_result": 0.708780983903533,
+        "results": {
+          "acc": 0.708780983903533
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "calculate_tokens_proba"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 1,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 1,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "Qwen/Qwen2.5-3B",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": null,
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.nlpcoreteam.enMMLU",
+              "module_sha256": "743a115d06efc1977cfb557ec88945fe749345e5a9850ea8ea62ae73a99a0df0"
+            },
+            "init_params": {
+              "name_suffix": null
+            },
+            "max_prompt_len": 8191,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 1,
+            "method": "calculate_tokens_proba",
+            "method_additional_args": {},
+            "name": "nlpcoreteam/enMMLU",
+            "registry_name": "nlpcoreteam/enmmlu"
+          }
+        },
+        "run_fingerprint": "19059f847aa9e2faa6e2e50884f66fe5b68f261c82e8d87839d06614ca0ca37a",
+        "task_name": "nlpcoreteam/enMMLU",
+        "time": 6.521947145462036
+      }
+    },
+    {
+      "distilled": {
+        "leaderboard_result": 0.4989114235437765,
+        "results": {
+          "acc": 0.4989114235437765
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "calculate_tokens_proba"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 1,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 1,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/final",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": null,
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.nlpcoreteam.ruMMLU",
+              "module_sha256": "743a115d06efc1977cfb557ec88945fe749345e5a9850ea8ea62ae73a99a0df0"
+            },
+            "init_params": {
+              "name_suffix": null
+            },
+            "max_prompt_len": 8191,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 1,
+            "method": "calculate_tokens_proba",
+            "method_additional_args": {},
+            "name": "nlpcoreteam/ruMMLU",
+            "registry_name": "nlpcoreteam/rummlu"
+          }
+        },
+        "run_fingerprint": "99ec157572af211ff0970b0399dbd68e24b8ac40804bbe07ef0962f456cafdaa",
+        "task_name": "nlpcoreteam/ruMMLU",
+        "time": 9.319857358932495
+      },
+      "pruning_only": {
+        "leaderboard_result": 0.5013531765982746,
+        "results": {
+          "acc": 0.5013531765982746
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "calculate_tokens_proba"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 1,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 1,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "/workdir/layer-wise_distillation/outputs/qwen2.5-3b-two-layer-pruning/iterations/iteration_002/pruning_only",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": null,
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.nlpcoreteam.ruMMLU",
+              "module_sha256": "743a115d06efc1977cfb557ec88945fe749345e5a9850ea8ea62ae73a99a0df0"
+            },
+            "init_params": {
+              "name_suffix": null
+            },
+            "max_prompt_len": 8191,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 1,
+            "method": "calculate_tokens_proba",
+            "method_additional_args": {},
+            "name": "nlpcoreteam/ruMMLU",
+            "registry_name": "nlpcoreteam/rummlu"
+          }
+        },
+        "run_fingerprint": "db1466abd9dbfcdc085d645dc0a79ceacab4d95979672c076e625453c8426609",
+        "task_name": "nlpcoreteam/ruMMLU",
+        "time": 9.587181806564331
+      },
+      "task": "nlpcoreteam/ruMMLU",
+      "teacher": {
+        "leaderboard_result": 0.5700245197794217,
+        "results": {
+          "acc": 0.5700245197794217
+        },
+        "run_config": {
+          "execution": {
+            "enable_thinking": false,
+            "model_kind": "plain",
+            "reasoning": {
+              "answer_separator": "\n\n",
+              "configured_max_new_tokens_reasoning": 4096,
+              "effective_max_new_tokens_reasoning": 0,
+              "end_thinking_token_id": null,
+              "min_new_tokens_reasoning": 1024,
+              "think_close": "</think>",
+              "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+            },
+            "requested_enable_thinking": false,
+            "scoring_method": "calculate_tokens_proba"
+          },
+          "generation_config": {
+            "_from_model_config": false,
+            "assistant_confidence_threshold": 0.4,
+            "assistant_early_exit": null,
+            "assistant_lookbehind": 10,
+            "bad_words_ids": null,
+            "begin_suppress_tokens": null,
+            "bos_token_id": null,
+            "cache_config": null,
+            "cache_implementation": null,
+            "constraints": null,
+            "decoder_start_token_id": null,
+            "disable_compile": false,
+            "diversity_penalty": 0.0,
+            "do_sample": false,
+            "dola_layers": null,
+            "early_stopping": false,
+            "encoder_no_repeat_ngram_size": 0,
+            "encoder_repetition_penalty": 1.0,
+            "eos_token_id": [
+              271
+            ],
+            "epsilon_cutoff": 0.0,
+            "eta_cutoff": 0.0,
+            "exponential_decay_length_penalty": null,
+            "force_words_ids": null,
+            "forced_bos_token_id": null,
+            "forced_eos_token_id": null,
+            "guidance_scale": null,
+            "is_assistant": false,
+            "length_penalty": 1.0,
+            "low_memory": null,
+            "max_length": 8192,
+            "max_matching_ngram_size": null,
+            "max_new_tokens": 1,
+            "max_time": null,
+            "min_length": 0,
+            "min_new_tokens": null,
+            "min_p": null,
+            "no_repeat_ngram_size": 0,
+            "num_assistant_tokens": 20,
+            "num_assistant_tokens_schedule": "constant",
+            "num_beam_groups": 1,
+            "num_beams": 1,
+            "num_return_sequences": 1,
+            "output_attentions": false,
+            "output_hidden_states": false,
+            "output_logits": null,
+            "output_scores": false,
+            "pad_token_id": 151643,
+            "penalty_alpha": null,
+            "prefill_chunk_size": null,
+            "presence_penalty": 0.0,
+            "prompt_lookup_num_tokens": null,
+            "remove_invalid_values": false,
+            "renormalize_logits": false,
+            "repetition_penalty": 1.0,
+            "return_dict_in_generate": false,
+            "return_legacy_cache": null,
+            "sequence_bias": null,
+            "stop_strings": [
+              "ĊĊ",
+              "\n\n"
+            ],
+            "suppress_tokens": null,
+            "target_lookbehind": 10,
+            "temperature": 0.0,
+            "token_healing": false,
+            "top_k": 40,
+            "top_p": 0.9,
+            "transformers_version": "4.57.6",
+            "trust_remote_code": false,
+            "typical_p": 1.0,
+            "use_cache": true,
+            "watermarking_config": null
+          },
+          "model": {
+            "_llmtf_continuation": {
+              "prefill_policy": "auto",
+              "probe_api_prefill": false,
+              "token_probability_aggregation": "max",
+              "token_probability_surface_forms": "candidate_and_single_leading_space"
+            },
+            "_llmtf_reasoning": {
+              "configured_max_new_tokens_reasoning": 4096,
+              "format": {
+                "answer_separator": "\n\n",
+                "end_thinking_token_id": null,
+                "think_close": "</think>",
+                "truncation_prompt": "\n…the rest of the reasoning chain is hidden due to limit on the length of the thoughts.\n"
+              },
+              "max_new_tokens_reasoning": 4096,
+              "min_new_tokens_reasoning": 1024,
+              "model_kind": "plain"
+            },
+            "backend_class": "VLLMBackend",
+            "calculate_tokens_proba_logprobs_count": 50,
+            "conversation_template_hash": "c1d5d75f32de8b8b98db47803150b2c60dff0b5de42b28cd5de484232ddb4447",
+            "conversation_template_path": "/workdir/llmtf_open/conversation_configs/default_foundational.json",
+            "device_map": "auto",
+            "disable_sliding_window": true,
+            "enable_prefix_caching": true,
+            "generation_config": {
+              "eos_token_id": [
+                271
+              ],
+              "max_length": 8192,
+              "max_new_tokens": 1,
+              "pad_token_id": 151643,
+              "presence_penalty": 0.0,
+              "stop_strings": [
+                "ĊĊ",
+                "\n\n"
+              ],
+              "temperature": 0.0,
+              "top_k": 40,
+              "top_p": 0.9,
+              "transformers_version": "4.57.6",
+              "trust_remote_code": false
+            },
+            "gpu_memory_utilization": 0.92,
+            "is_foundational": true,
+            "leading_space": false,
+            "limit_mm_per_prompt": {
+              "image": 0,
+              "video": 0
+            },
+            "max_model_len": 8192,
+            "max_seq_len_to_capture": 8192,
+            "model_name_or_path": "Qwen/Qwen2.5-3B",
+            "space_token": "<redacted>",
+            "tensor_parallel_size": 1,
+            "trust_remote_code": false,
+            "use_fast_tokenizer": true,
+            "vllm": true
+          },
+          "schema_version": 2,
+          "task": {
+            "additional_stop_strings": [],
+            "batch_size": 8,
+            "dataset_args": null,
+            "few_shot_count": 5,
+            "implementation": {
+              "class": "llmtf.tasks.nlpcoreteam.ruMMLU",
+              "module_sha256": "743a115d06efc1977cfb557ec88945fe749345e5a9850ea8ea62ae73a99a0df0"
+            },
+            "init_params": {
+              "name_suffix": null
+            },
+            "max_prompt_len": 8191,
+            "max_sample_per_dataset": 1000,
+            "max_task_new_tokens": 1,
+            "method": "calculate_tokens_proba",
+            "method_additional_args": {},
+            "name": "nlpcoreteam/ruMMLU",
+            "registry_name": "nlpcoreteam/rummlu"
+          }
+        },
+        "run_fingerprint": "8c51951e2fac226773337f14afe83169569aeaf8d4bb988b3c34504ec2febc17",
+        "task_name": "nlpcoreteam/ruMMLU",
+        "time": 10.258639574050903
+      }
+    }
+  ]
+}

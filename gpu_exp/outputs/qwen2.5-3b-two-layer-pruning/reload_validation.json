@@ -1,0 +1,6 @@
+{
+  "checkpoint": "outputs/qwen2.5-3b-two-layer-pruning/final",
+  "forward_pass": true,
+  "model_reload": true,
+  "tokenizer_reload": true
+}

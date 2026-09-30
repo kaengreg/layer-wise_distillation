@@ -8,8 +8,8 @@ Run all CPU-compatible tests that you add. Do not run or claim to have run the H
 
 Continue through implementation, testing, and documentation without stopping after the initial analysis. At the end, summarize:
 
-1. the implemented behavior;
-2. the files changed;
-3. every verification command and its result;
-4. checks that remain pending;
-5. assumptions or scientific limitations.
+1. the implemented behavior
+2. the files changed
+3. every verification command and its result
+4. checks that remain pending
+5. assumptions or scientific limitations

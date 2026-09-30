@@ -42,9 +42,14 @@ Prefer clear, reproducible research code over production-oriented abstractions.
 - Run the relevant tests after each meaningful change.
 - Report exactly which checks were run and which were skipped.
 - A skipped H100 experiment must be described as pending, not passed.
+- Treat validation loss, perplexity, and teacher KL as diagnostic metrics, not as substitutes for downstream evaluation.
+- Use LLMTF Open for the final downstream comparison of the teacher, pruning-only student, and distilled student.
+- Keep the LLMTF revision, task list, conversation config, few-shot count, generation settings, and sample limits identical across compared checkpoints.
+- Record the LLMTF git commit and complete evaluation command with every benchmark result.
 
 ## Documentation
 
 - Keep public CLI arguments documented in the README.
 - Record experiment parameters and results in machine-readable JSON.
-- Do not edit or fabricate files under `prompts/`; they contain prompts written by the human author.
+- Follow `docs/evaluation-protocol.md` when preparing or analyzing the H100 experiment.
+- Do not edit or fabricate files under `prompts/`; they contain prompts written by me.
