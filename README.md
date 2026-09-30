@@ -148,3 +148,151 @@ Use the following scripts for multi-node, multi-GPU training on SLURM:
 
 [TODO] Add a detailed report covering the methodology, pruning strategy, evaluation metrics, and final benchmark results.
 
+## Evaluation
+
+Model quality is evaluated with [LLMTF Open](https://github.com/RefalMachine/llmtf_open). The project uses English and Russian MMLU, Daru Treeway summarization, Russian document and paragraph copying, and FLORES translation in both English-Russian directions.
+
+For reproducible teacher, pruning-only, and distilled-student comparisons, including the required LLMTF revision and saved artifacts, see [docs/evaluation-protocol.md](docs/evaluation-protocol.md).
+
+## Reproducible iterative pipeline
+
+The maintained pipeline recomputes padding-aware Block Influence before every pruning step, removes current student layers while retaining their original teacher indices, and repairs neighboring layers against a frozen original teacher. Legacy scripts above are preserved for reproduction of earlier experiments.
+
+The pipeline intentionally supports one process on one CPU/GPU. Do not launch it through multi-process `torchrun` or multi-task `srun`. The output directory must be new or empty so that checkpoints and metadata from different runs cannot be mixed.
+
+Install the runtime and test dependencies:
+
+```bash
+python -m pip install -r requirements-dev.txt
+```
+
+Run CPU tests without Hub access (this is also the GitHub Actions command):
+
+```bash
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python -m pytest -q
+```
+
+Basic CLI usage:
+
+```bash
+python -m layerwise_distillation.run \
+    --teacher_model_path Qwen/Qwen2.5-3B \
+    --dataset kngrg/ru-miracl-cleaned \
+    --text_column text \
+    --target_num_layers 34 \
+    --layers_per_iteration 1 \
+    --output_dir outputs/qwen2.5-3b-two-layer-pruning
+```
+
+### Pipeline arguments
+
+| Argument | Meaning and default |
+| --- | --- |
+| `--teacher_model_path` | Original frozen teacher and initial student (`Qwen/Qwen2.5-3B`). |
+| `--dataset`, `--dataset_split`, `--text_column` | Hugging Face dataset, split, and text field (`kngrg/ru-miracl-cleaned`, `train`, `text`). |
+| `--target_num_layers` | Required final decoder depth; must be smaller than the teacher depth. |
+| `--layers_per_iteration` | Maximum number removed per iteration (`1`). |
+| `--output_dir` | Experiment artifact directory. |
+| `--max_importance_samples` | Texts used for each fresh Block Influence pass (`512`). |
+| `--max_train_samples`, `--max_eval_samples` | Training and held-out diagnostic limits (`20000`, `1000`). |
+| `--max_sequence_length` | Tokenized sequence limit (`512`). |
+| `--protect_first_layers`, `--protect_last_layers` | Protected layers at both ends (`1`, `1`). |
+| `--repair_radius` | Surviving layers selected on each side of a removed segment (`1`). |
+| `--temperature` | KL temperature (`2.0`). |
+| `--kl_weight`, `--hidden_weight`, `--lm_weight` | KL, mapped hidden-state MSE, and causal-LM weights (`1.0`, `1.0`, `0.0`). |
+| `--max_train_steps` | Optimizer steps per pruning iteration (`200`; `0` skips repair). |
+| `--train_batch_size`, `--eval_batch_size` | Per-device batches (`1`, `1`). |
+| `--gradient_accumulation_steps` | Micro-batches per optimizer step (`1`). |
+| `--learning_rate`, `--weight_decay` | AdamW settings (`1e-5`, `0.0`). |
+| `--train_final_norm` / `--no-train_final_norm` | Enable or disable final-norm repair (enabled). |
+| `--train_lm_head` / `--no-train_lm_head` | Enable or disable LM-head repair (enabled). |
+| `--dtype` | `float32`, `float16`, or `bfloat16` (`bfloat16`). |
+| `--attention_implementation` | `eager`, `sdpa`, or `flash_attention_2` (`sdpa`). |
+| `--seed` | Training/data seed (`1337`). |
+| `--report_to` | `json` or `none`; JSON artifacts are always retained (`json`). |
+
+### One-H100 experiment
+
+Run this exact training command on the remote H100. It performs two one-layer iterations, not one two-layer iteration:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python -m layerwise_distillation.run \
+    --teacher_model_path Qwen/Qwen2.5-3B \
+    --dataset kngrg/ru-miracl-cleaned \
+    --dataset_split train \
+    --text_column text \
+    --target_num_layers 34 \
+    --layers_per_iteration 1 \
+    --max_importance_samples 512 \
+    --max_sequence_length 512 \
+    --max_train_samples 20000 \
+    --max_eval_samples 1000 \
+    --max_train_steps 200 \
+    --train_batch_size 1 \
+    --eval_batch_size 1 \
+    --gradient_accumulation_steps 8 \
+    --protect_first_layers 1 \
+    --protect_last_layers 1 \
+    --repair_radius 1 \
+    --temperature 2.0 \
+    --kl_weight 1.0 \
+    --hidden_weight 1.0 \
+    --lm_weight 0.0 \
+    --dtype bfloat16 \
+    --attention_implementation sdpa \
+    --seed 1337 \
+    --report_to json \
+    --output_dir outputs/qwen2.5-3b-two-layer-pruning
+```
+
+The recorded diagnostics are validation loss, perplexity, teacher KL, parameter count, peak allocated GPU memory, and inference token throughput. They are not substitutes for downstream evaluation.
+
+### LLMTF Open setup and evaluation
+
+The evaluation wrapper is pinned to LLMTF commit `d36543888b6cc3865cf3a584b5c1bda0b0455567` and rejects any other checkout:
+
+```bash
+git clone https://github.com/RefalMachine/llmtf_open.git ../llmtf_open
+git -C ../llmtf_open checkout d36543888b6cc3865cf3a584b5c1bda0b0455567
+python -m venv ../llmtf-venv
+source ../llmtf-venv/bin/activate
+python -m pip install -r ../llmtf_open/requirements.txt
+```
+
+The smoke mode runs one probability task and one generation task for each of the teacher, final pruning-only checkpoint, and final distilled checkpoint. The full mode runs the required seven tasks for the same three paths. Both commands use foundational prompting, five shots, an 8192-token model context (leaving a 4096-token prompt budget for the document-copy task), deterministic generation, vLLM, one GPU, and isolated output directories:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python -m layerwise_distillation.run_llmtf \
+    --llmtf_dir ../llmtf_open \
+    --experiment_dir outputs/qwen2.5-3b-two-layer-pruning \
+    --mode smoke
+
+CUDA_VISIBLE_DEVICES=0 python -m layerwise_distillation.run_llmtf \
+    --llmtf_dir ../llmtf_open \
+    --experiment_dir outputs/qwen2.5-3b-two-layer-pruning \
+    --mode full
+```
+
+Use `--dry_run` to print the three exact underlying LLMTF commands and write `protocol.json` without starting evaluation. The wrapper resolves the final pruning-only checkpoint from `training_metrics.json` instead of assuming a fixed iteration count, verifies that both final checkpoint depths match the metadata, verifies the seven identifiers in the pinned task registry, keeps every original `*_params.jsonl`, result JSONL, `*_total.jsonl`, summary, and log file, then writes `comparison.json` with native per-task metrics. It stops rather than comparing different task sets.
+
+### Artifacts
+
+```text
+outputs/qwen2.5-3b-two-layer-pruning/
+├── run_config.json
+├── teacher_metrics.json
+├── training_metrics.json
+├── reload_validation.json
+├── iterations/
+│   ├── iteration_001/{pruning_only,distilled,metadata.json}
+│   └── iteration_002/{pruning_only,distilled,metadata.json}
+├── final/                         # reloadable final model and tokenizer
+└── llmtf/{smoke,full}/
+    ├── protocol.json
+    ├── teacher/
+    ├── pruning_only/
+    ├── distilled/
+    └── comparison.json
+```
+
+Each iteration metadata file contains current and original removed indices, the complete original-layer mapping, fresh Block Influence scores and ranking, repair layers, seed, full training configuration, and pruning-only/distilled diagnostics.
